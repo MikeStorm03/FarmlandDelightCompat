@@ -3,6 +3,32 @@ plugins {
     id 'net.neoforged.moddev'
 }
 
+repositories {
+    exclusiveContent {
+        forRepository {
+            maven {
+                name = 'CurseMaven'
+                url = uri("https://cursemaven.com")
+            }
+        }
+        filter {
+            includeGroup("curse.maven")
+        }
+    }
+    maven {
+        url = "https://api.modrinth.com/maven"
+    }
+}
+
+dependencies {
+    // optimizzed mods
+    implementation "maven.modrinth:sodium:mc1.21.1-0.6.13-neoforge"
+    implementation "maven.modrinth:lithium:mc1.21.1-0.15.0-neoforge"
+
+    // mod test
+    implementation "curse.maven:croptopia-415438:6788725"
+    implementation "maven.modrinth:epherolib:1.2.0-neoforge,1.21" // croptopia's library
+}
 neoForge {
     version = neoforge_version
     // Automatically enable neoforge AccessTransformers if the file exists

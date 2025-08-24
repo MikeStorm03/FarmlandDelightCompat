@@ -1,6 +1,6 @@
-package com.msg.platform;
+package com.msg.farmlanddelightcompat.platform;
 
-import com.msg.platform.services.IPlatformHelper;
+import com.msg.farmlanddelightcompat.platform.services.IPlatformHelper;
 import net.neoforged.fml.ModList;
 import net.neoforged.fml.loading.FMLLoader;
 

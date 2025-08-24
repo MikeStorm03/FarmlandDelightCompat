@@ -1,4 +1,4 @@
-package com.msg.platform.services;
+package com.msg.farmlanddelightcompat.platform.services;
 
 public interface IPlatformHelper {
 

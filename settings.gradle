@@ -2,6 +2,7 @@ pluginManagement {
     repositories {
         gradlePluginPortal()
         mavenCentral()
+
         exclusiveContent {
             forRepository {
                 maven {
@@ -14,6 +15,7 @@ pluginManagement {
                 includeGroup('fabric-loom')
             }
         }
+
         exclusiveContent {
             forRepository {
                 maven {
@@ -22,7 +24,7 @@ pluginManagement {
                 }
             }
             filter {
-                includeGroupAndSubgroups("org.spongepowered")
+                includeGroupAndSubgroups('org.spongepowered')
             }
         }
     }

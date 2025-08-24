@@ -1,7 +1,7 @@
 {
   "values": [
     {
-      "id": "farmersdelight:rich_soil_farmland",
+      "id": "#farmland-delight-compat:farmland",
       "required": false
     }
   ],

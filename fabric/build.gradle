@@ -3,10 +3,23 @@ plugins {
     id 'fabric-loom'
 }
 repositories {
-	mavenCentral()
 	maven {
-		url = "https://maven.impactdev.net/repository/development/"
-	}
+        name = "Greenhouse Maven"
+        url = 'https://repo.greenhouse.house/releases/'
+    }
+    maven { url "https://mvn.devos.one/releases/" } // Porting Lib
+    maven {
+        url "https://maven.jamieswhiteshirt.com/libs-release" // Reach Entity Attributes (Required by Porting Lib)
+        content {
+            includeGroup "com.jamieswhiteshirt"
+        }
+    }
+    maven {
+        url "https://jitpack.io/" // Fabric ASM
+        content {
+            excludeGroup "io.github.fabricators_of_create"
+        }
+    }
     maven {
         url = "https://api.modrinth.com/maven"
     }
@@ -19,6 +32,22 @@ dependencies {
     }
     modImplementation "net.fabricmc:fabric-loader:${fabric_loader_version}"
     modImplementation "net.fabricmc.fabric-api:fabric-api:${fabric_version}"
+
+    // farmer's delight
+    modImplementation("vectorwing:FarmersDelight:1.21.1-3.1.2+refabricated") {
+        exclude(group: "net.fabricmc")
+    }
+
+    // optimizzed mods
+    modLocalRuntime "maven.modrinth:sodium:mc1.21.1-0.6.13-fabric"
+    modLocalRuntime "maven.modrinth:lithium:mc1.21.1-0.15.0-fabric"
+
+    // ModMenu for management
+    modLocalRuntime "maven.modrinth:modmenu:11.0.3"
+
+    // testing mods
+    // test at built modRuntimeOnly "maven.modrinth:cobblemon:1.6.1"
+
 }
 
 loom {

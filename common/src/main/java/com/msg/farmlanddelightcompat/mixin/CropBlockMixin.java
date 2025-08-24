@@ -1,8 +1,9 @@
-package com.msg.mixin;
+package com.msg.farmlanddelightcompat.mixin;
 
-import com.msg.CommonClass;
+import com.msg.farmlanddelightcompat.CommonClass;
 import net.minecraft.core.BlockPos;
 import net.minecraft.world.level.BlockGetter;
+import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.CropBlock;
 import net.minecraft.world.level.block.state.BlockState;
 
@@ -16,6 +17,13 @@ public class CropBlockMixin {
     
     @Inject(method = "mayPlaceOn(Lnet/minecraft/world/level/block/state/BlockState;Lnet/minecraft/world/level/BlockGetter;Lnet/minecraft/core/BlockPos;)Z", at = @At("HEAD"), cancellable = true)
     private void injected(BlockState state, BlockGetter level, BlockPos pos, CallbackInfoReturnable<Boolean> cir) {
-        cir.setReturnValue(state.is(CommonClass.FARMLAND));
+
+        if (state.is(CommonClass.FARMLAND)) {
+            cir.setReturnValue(true);
+        }
+
+        if (state.is(Blocks.FARMLAND) && !state.is(CommonClass.FARMLAND)) {
+            cir.setReturnValue(false);
+        }
     }
 }

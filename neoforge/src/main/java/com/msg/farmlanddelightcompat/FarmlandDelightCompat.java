@@ -1,4 +1,4 @@
-package com.msg;
+package com.msg.farmlanddelightcompat;
 
 
 import net.neoforged.bus.api.IEventBus;

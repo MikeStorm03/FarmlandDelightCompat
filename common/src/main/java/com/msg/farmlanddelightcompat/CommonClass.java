@@ -1,6 +1,6 @@
-package com.msg;
+package com.msg.farmlanddelightcompat;
 
-import com.msg.platform.Services;
+import com.msg.farmlanddelightcompat.platform.Services;
 
 import net.minecraft.core.registries.Registries;
 import net.minecraft.resources.ResourceLocation;

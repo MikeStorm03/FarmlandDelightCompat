@@ -15,7 +15,7 @@
     "environment": "*",
     "entrypoints": {
         "main": [
-            "com.msg.FarmlandDelightCompat"
+            "com.msg.farmlanddelightcompat.FarmlandDelightCompat"
         ]
     },
     "mixins": [
@@ -26,11 +26,7 @@
         "fabricloader": ">=${fabric_loader_version}",
         "fabric-api": "*",
         "minecraft": ">1.21",
-        "java": ">=${java_version}",
-        "farmersdelight": "*"
-    },
-    "suggests": {
-        "another-mod": "*"
+        "java": ">=${java_version}"
     }
 }
   

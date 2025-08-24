@@ -1,7 +1,7 @@
-package com.msg.platform;
+package com.msg.farmlanddelightcompat.platform;
 
-import com.msg.Constants;
-import com.msg.platform.services.IPlatformHelper;
+import com.msg.farmlanddelightcompat.Constants;
+import com.msg.farmlanddelightcompat.platform.services.IPlatformHelper;
 
 import java.util.ServiceLoader;
 
